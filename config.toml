@@ -1,0 +1,20 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Smart Backpacker App"
+theme = "beautiful"
+publishDir = "docs"
+
+[Params]
+  subtitle = "Easily find Visa Requirements, Currency Exchange and Airline's Baggage Policy!"
+  logo = "img/sb.png"
+  favicon = "img/favicon.ico"
+  commit = false
+
+[Author]
+  name = "Gabriel Volpe"
+  website = "www.smartbackpackerapp.com"
+  email = "smartbackpackerapp@gmail.com"
+  facebook = "smartbackpackerapp"
+  github = "SmartBackpacker"
+  twitter = "SmBackpackerApp"
+  instagram = "smartbackpackerapp"
