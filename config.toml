@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://smartbackpacker.github.io/website/"
 languageCode = "en-us"
 title = "Smart Backpacker App"
 theme = "beautiful"
