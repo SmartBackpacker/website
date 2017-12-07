@@ -2,14 +2,14 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Smart Backpacker App</title>
-    <link>/</link>
+    <link>https://smartbackpacker.github.io/website/</link>
     <description>Recent content on Smart Backpacker App</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>smartbackpackerapp@gmail.com (Gabriel Volpe)</managingEditor>
     <webMaster>smartbackpackerapp@gmail.com (Gabriel Volpe)</webMaster>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://smartbackpacker.github.io/website/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
