@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Smart Backpacker App"
 theme = "beautiful"
 publishDir = "docs"
+relativeURLs = true
 
 [Params]
   subtitle = "Easily find Visa Requirements, Currency Exchange and Airline's Baggage Policy!"
