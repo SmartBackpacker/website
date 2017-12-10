@@ -19,3 +19,8 @@ relativeURLs = true
   github = "SmartBackpacker"
   twitter = "SmBackpackerApp"
   instagram = "smartbackpackerapp"
+
+[[menu.main]]
+    name = "Blog"
+    url = "http://blog.smartbackpackerapp.com"
+    weight = 1
