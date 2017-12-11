@@ -8,7 +8,7 @@ relativeURLs = true
 [Params]
   subtitle = "Easily find Visa Requirements, Currency Exchange and Airline's Baggage Policy!"
   logo = "img/sb.png"
-  favicon = "img/favicon.ico"
+  favicon = "img/sb.ico"
   commit = false
 
 [Author]
