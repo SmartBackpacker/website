@@ -1,0 +1,103 @@
+{{ define "main" }}
+  <div role="main" class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        {{ with .Content }}
+          <div class="well">
+            {{.}}
+          </div>
+        {{ end }}
+
+        <div id="stores" align="center">
+
+          <a href="https://play.google.com/store/apps/details?id=io.github.gvolpe.sb" target="_blank">
+            <img src="./img/google-play-store.png" align="left" width="15%" style="margin-right: 1%; margin-left: 35%;" />
+          </a>
+
+          <a href="https://itunes.apple.com/us/app/smartbackpackerapp/id1322542121?ls=1&mt=8" target="_blank">
+            <img src="./img/app-store.png" align="left" width="15%" style="margin-right: 1%; margin-left: 0.5em;" />
+          </a>
+
+        </div>
+            
+        <div id="donate" align="center">
+
+          <a href="https://www.paypal.me/smartbackpacker" target="_blank">
+            <img src="/img/paypal-donate.jpg" align="center" width="30%" style="margin-right: 45%; margin-left: 36.5%; margin-top: 20%;"/>
+          </a>
+ 
+        </div>
+
+        <br/>
+
+        <div id="crypto_coins" align="center" style="margin-left: 2%;">
+
+          <div>
+            <img src="/img/btc.png" width="6%" height="6%" align="center"/> <font size="1"><b>1FoEAJYU4TFJjU3XEqNdFuVdAwFjoRcWYH</b></font>
+          </div>
+          
+          <div>
+            <img src="/img/eth.png" width="6%" height="6%" align="center"/> <font size="1"><b>0xbc42e3866d74518ce77b7dfb404148942d0ec719</b></font>
+          </div>
+
+          <div>
+            <img src="/img/ltc.png" width="6%" height="6%" align="center"/> <font size="1"><b>LiASbrmChis418vN1czLCdqsSmJQUxgExH</b></font>
+          </div>
+
+        </div>
+
+        <div class="posts-list">
+          {{ $pag := .Paginate (where .Data.Pages "Type" "post") }}
+          {{ range $pag.Pages }}
+            <article class="post-preview">
+              <a href="{{ .Permalink }}">
+                <h2 class="post-title">{{ .Title }}</h2>
+                {{ if .Params.subtitle }}
+                  <h3 class="post-subtitle">
+                  {{ .Params.subtitle }}
+                  </h3>
+                {{ end }}
+                {{ if .Params.image }}
+                <img src="{{ .Params.image }}" class="img-title" />
+                {{ end }}
+              </a>
+
+              {{ partial "post_meta.html" . }}
+              <div class="post-entry">
+                {{ if .Truncated }}
+                  {{ .Summary }}
+                  <a href="{{ .Permalink }}" class="post-read-more">[{{ i18n "readMore" }}]</a>
+                {{ else }}
+                  {{ .Content }}
+                {{ end }}
+              </div>
+
+              {{ if .Params.tags }}
+                <span class="post-meta">
+                {{ range .Params.tags }}
+                  #<a href="{{ $.Site.LanguagePrefix | absURL }}tags/{{ . | urlize }}/">{{ . }}</a>&nbsp;
+                {{ end }}
+                </span>
+              {{ end }}
+            </article>
+          {{ end }}
+        </div>
+
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+          <ul class="pager main-pager">
+            {{ if .Paginator.HasPrev }}
+              <li class="previous">
+                <a href="{{ .URL }}page/{{ .Paginator.Prev.PageNumber }}/">&larr; {{ i18n "newerPosts" }}</a>
+              </li>
+            {{ end }}
+            {{ if .Paginator.HasNext }}
+              <li class="next">
+                <a href="{{ .URL }}page/{{ .Paginator.Next.PageNumber }}/">{{ i18n "olderPosts" }} &rarr;</a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+{{ end }}
